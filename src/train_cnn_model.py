@@ -44,11 +44,6 @@ def preprocess(text):
 
     return preprocessed_text_list
 
-    print('Original texts :')
-    print(text[37])
-    print('\nAfter cleansed :')
-    print(hl_cleansed[37])
-
 
 def tokenize(text):
     text = preprocess(text)
@@ -66,14 +61,6 @@ def preparing_data(text):
     tokenizer.fit_on_texts(text)
     sequences = tokenizer.texts_to_sequences(text)
     X = pad_sequences(sequences, maxlen=max_token)
-
-    index = 10
-    print('Before :')
-    print(text[index], '\n')
-    print('After sequences convertion :')
-    print(sequences[index], '\n')
-    print('After padding :')
-    print(X[index])
 
     return X
 
